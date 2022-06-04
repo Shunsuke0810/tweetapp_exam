@@ -1,20 +1,29 @@
+<header>
 <h1>今の気持ちを投稿してみよう</h1>
+</header>
 
 <p><%= notice %></p>
 
-<table>
-  <tr>
-    <th>内容</th>
-  </tr>
 
-<% @posts.each do |post| %>
-  <tr>
-    <td><%= post.content %></td>
-    <td><%= link_to '投稿を確認する', post_path(post.id) %></td>
-    <td><%= link_to "投稿を編集する", edit_post_path(post.id) %></td>
-    <td><%= link_to '投稿を削除する', post_path(post.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %></td>
-  </tr>
-<% end %>
-</table>
+<top>
+  <table>
+    <tr>
+      <th>今どんな気持ち？</th>
+    </tr>
+
+  <% @posts.each do |post| %>
+    <tr>
+      <td><%= post.content %></td>
+      <td><%= link_to '投稿を確認する', post_path(post.id) %></td>
+      <td><%= link_to "投稿を編集する", edit_post_path(post.id) %></td>
+      <td><%= link_to '投稿を削除する', post_path(post.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %></td>
+    </tr>
+  <% end %>
+  </table>
+</top>
 
 <%= link_to '新しく投稿する', new_post_path %>
+
+<footer>
+Today_is_the_yungest_day
+</footer>
