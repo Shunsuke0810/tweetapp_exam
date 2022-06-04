@@ -49,15 +49,14 @@ class PostsController < ApplicationController
     render :new if @post.invalid?
   end
   
-  private
+    private
   
     def post_params
-      params.require(:post).permit(:content)
+    params.require(:post).permit(:content)
     end
     
     def set_post
-      @post = Post.find(params[:id])
+    @post = Post.find(params[:id])
     end
-
   
 end
